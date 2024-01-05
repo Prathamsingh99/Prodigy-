@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #container {
+            margin: 50px auto;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Temperature Converter</h1>
+        <input type="number" id="inputCelsius" placeholder="Enter Celsius" oninput="convertTemp()">
+        <p>°Celsius = <span id="resultFahrenheit"> </span>°Fahrenheit</p>
+        <input type="number" id="inputFahrenheit" placeholder="Enter Fahrenheit" oninput="convertTemp()">
+        <p>°Fahrenheit = <span id="resultCelsius"> </span>°Celsius</p>
+    </div>
+
+    <script>
+        function convertTemp() {
+            var inputCelsius = document.getElementById("inputCelsius").value;
+            var inputFahrenheit = document.getElementById("inputFahrenheit").value;
+            var resultFahrenheit = (inputCelsius * 9/5) + 32;
+            var resultCelsius = (inputFahrenheit - 32) * 5/9;
+            document.getElementById("resultFahrenheit").textContent = resultFahrenheit.toFixed(2);
+            document.getElementById("resultCelsius").textContent = resultCelsius.toFixed(2);
+        }
+    </script>
+</body>
+</html>
